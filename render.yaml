@@ -5,9 +5,6 @@ services:
     plan: free
     region: oregon
     ipAllowList: []
-    databases:
-      - name: test_url_db
-        user: test_url_user
 
   # Web Service
   - type: web
