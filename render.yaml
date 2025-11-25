@@ -4,6 +4,8 @@ services:
     name: test-url-db
     plan: free
     region: oregon
+    databaseName: test_url_db
+    databaseUser: test_url_user
 
   # Web Service
   - type: web
