@@ -4,12 +4,11 @@ services:
     name: test-url-db
     plan: free
     region: oregon
-    ipAllowList: []
 
   # Web Service
   - type: web
     name: test-url
-    runtime: node
+    env: node
     plan: free
     region: oregon
     branch: main
