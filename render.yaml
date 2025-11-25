@@ -1,0 +1,47 @@
+services:
+  # PostgreSQL Database
+  - type: pserv
+    name: test-url-db
+    plan: free
+    databaseName: test_url_db
+    databaseUser: test_url_user
+    region: oregon
+    ipAllowList: []
+
+  # Web Service
+  - type: web
+    name: test-url
+    runtime: node
+    plan: free
+    region: oregon
+    branch: main
+    buildCommand: pnpm install && pnpm nx build test-url
+    startCommand: node dist/apps/test-url/main.js
+    healthCheckPath: /ping
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: DB_HOST
+        fromDatabase:
+          name: test-url-db
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: test-url-db
+          property: port
+      - key: DB_USER
+        fromDatabase:
+          name: test-url-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: test-url-db
+          property: password
+      - key: DB_NAME
+        fromDatabase:
+          name: test-url-db
+          property: database
+      - key: DB_SSL
+        value: true
