@@ -4,8 +4,7 @@ services:
     plan: free
     region: oregon
     env: postgres
-    databaseName: test_url_db
-    databaseUser: test_url_user
+
 
   # Web Service
   - type: web
