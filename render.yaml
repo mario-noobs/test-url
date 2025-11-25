@@ -1,9 +1,9 @@
 services:
-  # PostgreSQL Database
   - type: pserv
     name: test-url-db
     plan: free
     region: oregon
+    env: postgres
     databaseName: test_url_db
     databaseUser: test_url_user
 
