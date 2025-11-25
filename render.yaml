@@ -4,6 +4,7 @@ databases:
     region: oregon
     databaseName: test_url_db
 
+services:
   # Web Service
   - type: web
     name: test-url
@@ -17,27 +18,34 @@ databases:
     envVars:
       - key: NODE_ENV
         value: production
+
       - key: PORT
         value: 10000
+
       - key: DB_HOST
         fromDatabase:
           name: test-url-db
           property: host
+
       - key: DB_PORT
         fromDatabase:
           name: test-url-db
           property: port
+
       - key: DB_USER
         fromDatabase:
           name: test-url-db
           property: user
+
       - key: DB_PASSWORD
         fromDatabase:
           name: test-url-db
           property: password
+
       - key: DB_NAME
         fromDatabase:
           name: test-url-db
           property: database
+
       - key: DB_SSL
         value: true
