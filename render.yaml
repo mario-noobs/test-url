@@ -3,10 +3,11 @@ services:
   - type: pserv
     name: test-url-db
     plan: free
-    databaseName: test_url_db
-    databaseUser: test_url_user
     region: oregon
     ipAllowList: []
+    databases:
+      - name: test_url_db
+        user: test_url_user
 
   # Web Service
   - type: web
