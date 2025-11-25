@@ -1,0 +1,26 @@
+{
+  "name": "test-url",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/test-url/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "test-url:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "test-url:build:development"
+        },
+        "production": {
+          "buildTarget": "test-url:build:production"
+        }
+      }
+    }
+  }
+}
