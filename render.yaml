@@ -13,7 +13,7 @@ services:
     region: oregon
     branch: main
     buildCommand: pnpm install && pnpm exec nx build test-url
-    startCommand: pnpm exec nx run test-url:serve
+    startCommand: node dist/main.js
     healthCheckPath: /ping
     envVars:
       - key: NODE_ENV

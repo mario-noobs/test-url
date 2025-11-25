@@ -36,7 +36,7 @@ git push origin main
    - **Branch**: `main`
    - **Runtime**: Node
    - **Build Command**: `pnpm install && pnpm nx build test-url`
-   - **Start Command**: `node dist/apps/test-url/main.js`
+   - **Start Command**: `node dist/main.js`
    - **Plan**: Free
 
 ## Step 4: Configure Environment Variables
@@ -76,7 +76,7 @@ After first deployment, you may need to run migrations:
 2. Navigate to **Shell** tab
 3. Run your migration command:
    ```bash
-   node dist/apps/test-url/main.js # Or your migration script
+   node dist/main.js # Or your migration script
    ```
 
 ## Testing Your Deployment
