@@ -86,7 +86,7 @@ export const deleteConfigHandler = async (
 }
 
 export const testHandler = [
-  http.all('/incident/:route', async (req): Promise<HttpResponse> => {
+  http.all('/incident/:route', async (req): Promise<HttpResponse<any>> => {
     const requestHeaders = req.request.headers
     const route = req.params.route as string
     const config = await getConfigById(route)
@@ -207,7 +207,7 @@ function generateHttpResponse(
   currentConfig: Configuration,
   headers: Record<string, string>,
   route: string,
-): HttpResponse {
+): HttpResponse<any> {
   switch (currentConfig.status) {
     case Status.UP: {
       const response = currentConfig.responseBody

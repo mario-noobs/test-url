@@ -6,7 +6,7 @@ const isProduction = process.env.NODE_ENV === 'production'
 
 module.exports = {
   output: {
-    path: join(__dirname, '../../dist/apps/test-url'),
+    path: join(__dirname, './dist'),
   },
   plugins: [
     new NxAppWebpackPlugin({

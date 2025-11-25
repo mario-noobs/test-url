@@ -24,7 +24,7 @@ export const getConfigById = async (id: string) => {
   return null
 }
 
-export const createConfig = async (config: InsertConfigs) => {
+export const createConfig = async (config: any) => {
   const created = await db.insert(configs).values(config).returning()
   await memoryCache.set(created[0].id, created[0])
   return created
@@ -32,7 +32,7 @@ export const createConfig = async (config: InsertConfigs) => {
 
 export const updateConfig = async (
   id: string,
-  config: Partial<InsertConfigs>,
+  config: any,
 ) => {
   const updated = await db
     .update(configs)

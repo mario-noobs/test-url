@@ -12,8 +12,8 @@ services:
     plan: free
     region: oregon
     branch: main
-    buildCommand: pnpm install && pnpm nx build test-url
-    startCommand: node dist/apps/test-url/main.js
+    buildCommand: pnpm install && pnpm exec nx build test-url
+    startCommand: pnpm exec nx run test-url:serve
     healthCheckPath: /ping
     envVars:
       - key: NODE_ENV
