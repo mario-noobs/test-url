@@ -1,7 +1,7 @@
 {
   "name": "test-url",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/test-url/src",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "test-url/src",
   "projectType": "application",
   "tags": [],
   "targets": {

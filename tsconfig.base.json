@@ -1,0 +1,63 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "jsx": "react-jsx",
+    "importHelpers": false,
+    "target": "ES2021",
+    "module": "esnext",
+    "lib": [
+      "es2020",
+      "dom"
+    ],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "strictNullChecks": true,
+    "noImplicitAny": false,
+    "baseUrl": ".",
+    "paths": {
+      "@infra/*": [
+        "apps/infrastructure/src/*"
+      ],
+      "@backend/*": [
+        "apps/user-portal-backend/src/*"
+      ],
+      "@libs/database/*": [
+        "libs/database/src/*"
+      ],
+      "@libs/pubsub-queue/*": [
+        "libs/pubsub-queue/src/*"
+      ],
+      "@libs/shared/*": [
+        "libs/shared/src/*"
+      ],
+      "@libs/notifier/*": [
+        "libs/notifier/src/*"
+      ],
+      "@libs/notifier": [
+        "libs/notifier/src/index.ts"
+      ],
+      "@libs/integration-callback/*": [
+        "libs/integration-callback/src/*"
+      ],
+      "@libs/integration-callback": [
+        "libs/integration-callback/src/index.ts"
+      ],
+      "@orchestrator/*": [
+        "apps/orchestrator/src/*"
+      ],
+      "@worker/*": [
+        "apps/worker/src/*"
+      ]
+    }
+  },
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
+}
